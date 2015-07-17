@@ -6,11 +6,11 @@
   <packaging>war</packaging>
   <version>1.0-SNAPSHOT</version>
 
-  <groupId>com.clouway.cw</groupId>
-  <artifactId>clouway-cw</artifactId>
+  <groupId>com.clouway.hr</groupId>
+  <artifactId>clouway-hr</artifactId>
 
   <properties>
-    <app.id>clouway-cw</app.id>
+    <app.id>clouway-hr</app.id>
     <app.version>1</app.version>
     <appengine.version>1.9.20</appengine.version>
     <gcloud.plugin.version>0.9.58.v20150505</gcloud.plugin.version>
@@ -20,6 +20,13 @@
   <prerequisites>
     <maven>3.1.0</maven>
   </prerequisites>
+
+    <repositories>
+        <repository>
+            <id>twig</id>
+            <url>http://mvn.twig-persist.googlecode.com/hg</url>
+        </repository>
+    </repositories>
 
   <dependencies>
     <!-- Compile/runtime dependencies -->

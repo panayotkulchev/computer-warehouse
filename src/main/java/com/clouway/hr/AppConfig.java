@@ -21,7 +21,7 @@ public class AppConfig extends GuiceServletContextListener {
               @Override
               protected void configureServlets() {
 
-                filter("/").through(OAuthCredentialsFilter.class);
+                filter("/1").through(OAuthCredentialsFilter.class);
 
               }
             },
