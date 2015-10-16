@@ -1,4 +1,4 @@
-package com.clouway.hr.adapter.persistence;
+package com.clouway.hr.adapter.frontend.translator;
 
 import com.google.inject.AbstractModule;
 import com.google.inject.Provides;
@@ -14,7 +14,7 @@ import com.vercer.engine.persist.annotation.AnnotationObjectDatastore;
 public class PersistenceModule extends AbstractModule {
   @Override
   protected void configure() {
-
+    bind(TranslatorRepository.class).to(PersistentTranslatorRepository.class);
   }
 
   @Provides

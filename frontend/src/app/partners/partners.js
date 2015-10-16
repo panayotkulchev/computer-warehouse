@@ -26,7 +26,7 @@ angular.module('cw.partners', [
               dds: "BG202209164",
               address: "1111 Sofia, bul. Shipchenski prohod bl.240",
               mol: "Meri Vasileva",
-              phone:"02/5535045"
+              phone: "02/5535045"
             }
           ];
 
@@ -39,7 +39,7 @@ angular.module('cw.partners', [
             $scope.dds = dds;
             $scope.address = address;
             $scope.mol = mol;
-              $scope.phone =phone;
+            $scope.phone = phone;
             $('#myModal').modal('show');
           };
 
