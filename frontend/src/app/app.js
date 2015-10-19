@@ -14,6 +14,7 @@ angular.module('cw.core', [
   'cw.invoices',
   'cw.deliveries',
   'ta.translators',
+  'i18n',
   'ui.router'
 ])
         .config(function myAppConfig($stateProvider, $urlRouterProvider, growlProvider) {
@@ -23,6 +24,7 @@ angular.module('cw.core', [
           growlProvider.globalDisableCountDown(true);
           growlProvider.globalDisableIcons(true);
           growlProvider.globalTimeToLive({success: 5000, error: 10000, warning: 5000, info: 5000});
+
         })
 
         .run(function run() {

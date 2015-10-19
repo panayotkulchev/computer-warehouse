@@ -67,7 +67,8 @@ module.exports = {
       'vendor/angular-ui-router/release/angular-ui-router.js',
       'vendor/nya-bootstrap-select/dist/js/nya-bs-select.min.js',
       'vendor/angular-growl-v2/build/angular-growl.min.js',
-      'vendor/angular-ui-utils/modules/route/route.js'
+      'vendor/angular-ui-utils/modules/route/route.js',
+      'vendor/angular-translate/angular-translate.min.js'
     ],
     css: [
       'vendor/nya-bootstrap-select/dist/css/nya-bs-select.min.css',

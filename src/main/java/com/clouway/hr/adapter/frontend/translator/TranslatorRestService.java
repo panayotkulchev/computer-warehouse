@@ -6,6 +6,7 @@ import com.google.sitebricks.client.transport.Json;
 import com.google.sitebricks.headless.Reply;
 import com.google.sitebricks.headless.Request;
 import com.google.sitebricks.headless.Service;
+import com.google.sitebricks.http.Get;
 import com.google.sitebricks.http.Post;
 
 /**
@@ -19,11 +20,17 @@ import com.google.sitebricks.http.Post;
 public class TranslatorRestService {
 
 
-  private TranslatorRepository repository;
+  private TranslatorService service;
 
   @Inject
-  public TranslatorRestService(TranslatorRepository repository) {
-    this.repository = repository;
+  public TranslatorRestService(TranslatorService service) {
+    this.service=service;
+  }
+
+  @Get
+  public Reply<?> get(Request request){
+    System.out.println("GET");
+    return Reply.saying().ok();
   }
 
 
@@ -31,16 +38,17 @@ public class TranslatorRestService {
   public Reply<?> add(Request request) {
 
     final TranslatorDto dto = request.read(TranslatorDto.class).as(Json.class);
-    final TranslatorEntity entity = dtoToEntity(dto);
+    System.out.println(dto);
+    final TranslatorDo translator = dtoToDo(dto);
 
-    repository.add(entity);
+    service.add(translator);
 
     return Reply.saying().ok();
   }
 
 
-  private TranslatorEntity dtoToEntity(TranslatorDto dto) {
-    return new TranslatorEntity(dto.name, dto.currentAddress, dto.permanentAddress, dto.phones,
+  private TranslatorDo dtoToDo(TranslatorDto dto) {
+    return new TranslatorDo(dto.name, dto.currentAddress, dto.permanentAddress, dto.phones,
             dto.languages, dto.educations, dto.email, dto.skype, dto.eid, dto.document, dto.iban);
   }
 }

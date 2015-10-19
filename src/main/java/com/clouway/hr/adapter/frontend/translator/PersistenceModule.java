@@ -15,6 +15,7 @@ public class PersistenceModule extends AbstractModule {
   @Override
   protected void configure() {
     bind(TranslatorRepository.class).to(PersistentTranslatorRepository.class);
+    bind(TranslatorService.class).to(TranslatorServiceImpl.class);
   }
 
   @Provides

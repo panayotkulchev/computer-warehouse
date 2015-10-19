@@ -25,8 +25,9 @@ public class TranslatorEntity {
   private String document;
   private String iban;
 
-//    public TranslatorEntity() {
-//    }
+  @SuppressWarnings("unchecked")
+    public TranslatorEntity() {
+    }
 
   public TranslatorEntity(String name,
                           String currentAddress,
