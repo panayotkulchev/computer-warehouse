@@ -3,7 +3,9 @@
  */
 angular.module('ta.translators', [
   'ui.router',
-  'ui.bootstrap'
+  'ui.bootstrap',
+  'ta.http',
+  'common'
 ])
         .config(function config($stateProvider) {
           $stateProvider.state('translators', {
@@ -28,7 +30,7 @@ angular.module('ta.translators', [
               return httpRequest.post('r/nomenclature/translators', translatorDto);
             },
             deleteById: function (id) {
-              return httpRequest.del('/r/nomenclature/translators' + id);
+              return httpRequest.del('/r/nomenclature/translators', {id: id});
             }
           };
         })
@@ -42,10 +44,25 @@ angular.module('ta.translators', [
             var translatorDto = toDto(translator);
 
             translatorsGateway.add(translatorDto).then(
-
                     function onSuccess() {
                       growl.success($scope.translator.name + " was added!");
                       $scope.translator = {};
+                    },
+                    function onError() {
+                      growl.warning("Unexpected system error!");
+                    }
+            );
+          };
+
+          $scope.deleteById = function (id) {
+            translatorsGateway.deleteById(id).then(
+                    function onSuccess() {
+                      var position = $scope.translators.map(function (e) {
+                        return e.id;
+                      }).indexOf(id);
+                      if (position !== -1) {
+                        $scope.translators.splice(position, 1);
+                      }
                     },
                     function onError() {
                       growl.warning("Unexpected system error!");

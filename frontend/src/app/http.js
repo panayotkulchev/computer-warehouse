@@ -1,6 +1,6 @@
-angular.module('bss.http', ['pascalprecht.translate'])
+angular.module('ta.http', [])
 
-        .service('httpRequest', ['$http', '$q', '$rootScope', '$locale', '$translate', function ($http, $q, $rootScope, $locale, $translate) {
+        .service('httpRequest', ['$http', '$q', '$rootScope', '$locale',  function ($http, $q, $rootScope, $locale) {
 
           var count = 0;
 
@@ -16,8 +16,8 @@ angular.module('bss.http', ['pascalprecht.translate'])
             return this.send('PUT', url, data);
           };
 
-          this.del = function (url) {
-            return this.send('DELETE', url);
+          this.del = function (url,params, data) {
+            return this.send('DELETE', url, data, params);
           };
 
           this.send = function (method, url, data, params) {

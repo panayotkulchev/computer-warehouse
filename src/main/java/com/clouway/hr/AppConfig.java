@@ -12,8 +12,8 @@ import com.google.inject.servlet.ServletModule;
 import com.google.sitebricks.SitebricksModule;
 
 /**
- * @author Dimitar Dimitrov (dimitar.dimitrov045@gmail.com)
- */
+* @author Dimitar Dimitrov (dimitar.dimitrov045@gmail.com)
+*/
 public class AppConfig extends GuiceServletContextListener {
     @Override
     protected Injector getInjector() {

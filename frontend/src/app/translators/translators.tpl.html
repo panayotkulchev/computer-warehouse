@@ -109,10 +109,12 @@
                                                         ng-click="openModal()"
                                                         uib-tooltip="{{'TRANSLATORS.EDIT'| translate}}">
                                                     <i class="fa fa-pencil"></i></button>
-                                                <button type="button" class="btn btn-danger btn-xs"
-                                                        ng-click="deletePartner(datalist.id)"
-                                                        uib-tooltip="{{'TRANSLATORS.DELETE'| translate}}">
-                                                    <i class="fa fa-trash"></i></button>
+                                                <confirm-modal message="Test" ok-pressed="deleteById(5)">
+                                                    <button type="button" class="btn btn-danger btn-xs"
+                                                            uib-tooltip="{{'TRANSLATORS.DELETE'| translate}}">
+                                                        <i class="fa fa-trash"></i></button>
+                                                </confirm-modal>
+
                                             </div>
                                     </td>
                                 </tr>

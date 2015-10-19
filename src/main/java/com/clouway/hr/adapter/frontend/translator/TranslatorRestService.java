@@ -15,7 +15,6 @@ import com.google.sitebricks.http.Post;
  * happy codding ...
  */
 
-@At("/r/nomenclature/translators")
 @Service
 public class TranslatorRestService {
 
