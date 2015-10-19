@@ -20,5 +20,7 @@ public class TranslatorServiceImpl implements TranslatorService {
   @Override
   public void add(TranslatorDo translator) {
 
+
+
   }
 }
