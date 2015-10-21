@@ -27,6 +27,13 @@ public class PersistentLanguageRepository implements LanguageRepository{
   @Override
   public void mapUserId(String language, Long userId) {
 
+    final LanguageEntity entity = datastore.load(LanguageEntity.class, language);
+
+    entity.getTranslaorIds().add(userId);
+
+    datastore.update(entity);
+
+
   }
 
   @Override

@@ -18,7 +18,6 @@ import com.google.sitebricks.http.Post;
 @Service
 public class TranslatorRestService {
 
-
   private TranslatorService service;
 
   @Inject
@@ -31,7 +30,6 @@ public class TranslatorRestService {
     System.out.println("GET");
     return Reply.saying().ok();
   }
-
 
   @Post
   public Reply<?> add(Request request) {

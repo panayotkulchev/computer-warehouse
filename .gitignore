@@ -8,3 +8,7 @@ src/main/webapp/assets/
 src/main/webapp/fonts/
 src/main/webapp/index.html
 src/main/webapp/WEB-INF/home.html
+src/main/webapp/karma*
+src/main/webapp/templates*
+src/main/webapp/vendor
+src/main/webapp/src

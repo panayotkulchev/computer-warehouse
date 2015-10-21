@@ -27,7 +27,6 @@ angular.module('ta.translators', [
                       {offset: offset, count: count, keyword: keyword});
             },
             add: function (translatorDto) {
-              console.log(translatorDto);
               return httpRequest.post('r/nomenclature/translators', translatorDto);
             },
             deleteById: function (id) {
